@@ -1,0 +1,4 @@
+.vscode/
+node_modules/
+ZLATMAX/
+package-lock.json
