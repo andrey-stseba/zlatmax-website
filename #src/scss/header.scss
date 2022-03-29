@@ -3,8 +3,6 @@
   // .header__top
 
   &__top {
-    background-color: $mainDarkColor;
-    color: #fff;
   }
 
   // .header__body
@@ -18,6 +16,8 @@
   }
 }
 .top-header {
+  background-color: $mainDarkColor;
+  color: #fff;
   padding: 10px 0;
   // .top-header__container
   &__container {
@@ -41,6 +41,13 @@
     &::before {
       font-size: 28px;
       margin-right: 15px;
+    }
+    @media (any-hover: hover) {
+      &:hover {
+        span {
+          text-decoration: underline;
+        }
+      }
     }
   }
 }
@@ -66,6 +73,11 @@
   &__link {
     font-size: 16px;
     line-height: math.div(20, 16);
+    @media (any-hover: hover) {
+      &:hover {
+        text-decoration: underline;
+      }
+    }
   }
 
   // .menu__icon
@@ -159,6 +171,13 @@
       font-size: 24px;
       margin: 0px 24px 0px 0px;
     }
+    @media (any-hover: hover) {
+      &:hover {
+        span {
+          text-decoration: underline;
+        }
+      }
+    }
   }
   // .actions-header__phones
 
@@ -215,6 +234,7 @@
 
   &__list {
     position: absolute;
+    z-index: 5;
     top: 100%;
     width: 100%;
     left: 0;
@@ -238,6 +258,11 @@
     margin: 3px 0px 0px 0px;
     line-height: math.div(22, 18);
     color: #e8aa31 !important;
+    @media (any-hover: hover) {
+      &:hover {
+        text-decoration: underline;
+      }
+    }
   }
 }
 .cart-header {
@@ -287,10 +312,153 @@
 
   &__link {
     color: #e8aa31 !important;
+    @media (any-hover: hover) {
+      &:hover {
+        text-decoration: underline;
+      }
+    }
   }
 }
 
 //====================================================================================================
+
+.catalog-header {
+  position: relative;
+  background-color: $mainDarkColor;
+  color: #fff;
+  // .catalog-header__container
+  &__container {
+  }
+
+  // .catalog-header__menu
+
+  &__menu {
+  }
+}
+
+.menu-catalog {
+  // .menu-catalog__list
+
+  &__list {
+    display: flex;
+    gap: 10px;
+    justify-content: space-between;
+  }
+
+  // .menu-catalog__item
+
+  &__item {
+  }
+
+  // .menu-catalog__link
+
+  &__link {
+    padding: 0 10px;
+    min-height: 70px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    position: relative;
+    transition: color 0.3s ease 0s;
+    &::after {
+      content: '';
+      visibility: hidden;
+      opacity: 0;
+      position: absolute;
+      bottom: 0;
+      left: 10px;
+      height: 1px;
+      background-color: $mainOrangeColor;
+      width: calc(100% - 20px);
+      transition: all 0.3s ease 0s;
+    }
+    @media (any-hover: hover) {
+      &:hover {
+        color: $mainOrangeColor;
+        &::after {
+          opacity: 1;
+          visibility: visible;
+        }
+      }
+    }
+  }
+
+  // .menu-catalog__sub-menu
+
+  &__sub-menu {
+    position: absolute;
+    width: 100%;
+    left: 0;
+    top: 100%;
+    background-color: $mainDarkColor;
+  }
+}
+.sub-menu-catalog {
+  // .sub-menu-catalog__block
+  padding-bottom: 30px;
+  &__block {
+    padding: 0 10px;
+    display: flex;
+    justify-content: space-between;
+  }
+
+  // .sub-menu-catalog__column
+
+  &__column {
+    flex: 1 1 auto;
+    display: grid;
+    gap: 30px;
+  }
+
+  // .sub-menu-catalog__category
+
+  &__category {
+    font-size: 16px;
+    line-height: math.div(20, 16);
+    font-weight: 700;
+    padding: 30px 0px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+    @media (any-hover: hover) {
+      &:hover {
+        text-decoration: underline;
+      }
+    }
+  }
+
+  // .sub-menu-catalog__list
+
+  &__list {
+    display: grid;
+    gap: 20px;
+  }
+
+  // .sub-menu-catalog__item
+
+  &__item {
+  }
+
+  // .sub-menu-catalog__link
+
+  &__link {
+    font-size: 16px;
+    line-height: math.div(20, 16);
+    @media (any-hover: hover) {
+      &:hover {
+        text-decoration: underline;
+      }
+    }
+  }
+
+  // .sub-menu-catalog__all
+
+  &__all {
+    font-size: 16px;
+    font-weight: 500;
+    color: $mainOrangeColor !important;
+  }
+}
+//=============================================================================================
 
 //Burger
 .icon-menu {
