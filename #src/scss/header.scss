@@ -407,25 +407,21 @@
   }
   // .sub-menu-catalog__block
   &__block {
-    padding-bottom: 30px;
     display: none;
-    &._sub-menu-open {
-      display: flex;
+    @for $var from 1 to 6 {
+      &_#{$var} {
+        grid-template-columns: repeat($var, minmax(auto, 320px));
+      }
     }
-  }
 
-  // .sub-menu-catalog__column
-
-  &__column {
-    flex: 0 1 320px;
-    display: flex;
-    flex-direction: column;
+    &._sub-menu-open {
+      display: grid;
+    }
   }
 
   // .sub-menu-catalog__category
 
   &__category {
-    align-self: flex-start;
     font-size: 16px;
     line-height: math.div(20, 16);
     font-weight: 700;
@@ -440,7 +436,6 @@
   // .sub-menu-catalog__list
 
   &__list {
-    flex: 1 1 auto;
     display: flex;
     flex-direction: column;
     gap: 20px;
@@ -465,17 +460,17 @@
       }
     }
   }
+  // .sub-menu-catalog__footer
+  &__footer {
+    padding: 30px 15px;
+  }
 
   // .sub-menu-catalog__all
 
   &__all {
-    align-self: flex-start;
     font-size: 16px;
     font-weight: 500;
     color: $mainOrangeColor !important;
-    padding-top: 30px;
-    padding-left: 15px;
-    padding-right: 15px;
     @media (any-hover: hover) {
       &:hover {
         text-decoration: underline;
